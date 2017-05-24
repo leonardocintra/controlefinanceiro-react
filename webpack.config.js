@@ -8,7 +8,7 @@ module.exports = {
         filename: './app.js'
     },
     devServer: {
-        port: 8000,
+        port: 3000,
         contentBase: './public'
     },
     resolve: {
@@ -27,7 +27,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('app.css')
     ],
-    modules: {
+    module: {
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
@@ -38,7 +38,7 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.png|.svg|.jpg*.*$/,
             loader: 'file'
