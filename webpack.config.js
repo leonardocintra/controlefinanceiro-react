@@ -15,11 +15,11 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules',
-            jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.2.min.js',
+            jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
             bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugins: [
+    plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -41,7 +41,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.png|.svg|.jpg*.*$/,
-            loader: 'file'
+            loader: 'file-loader'
         }]
     }
 }
