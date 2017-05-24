@@ -1,8 +1,10 @@
 import '../commom/template/dependencies'
 import React from 'react'
 
+import Header from '../commom/template/header'
+
 export default props => (
   <div className="wrapper">
-    <h1>Controle Financeiro</h1>
+    <Header></Header>
   </div>
 )
